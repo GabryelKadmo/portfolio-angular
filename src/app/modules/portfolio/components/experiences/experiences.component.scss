@@ -15,28 +15,28 @@
     margin-top: 10px;
     background: var(--black-010);
     border-radius: 7px;
-    // color: var(--white);
 
     summary,
     .content {
       padding: 10px 20px;
-      //   color: var(--grey);
     }
+
     article {
       font-size: 16px;
       font-family: Arial, Helvetica, sans-serif;
     }
+
     summary {
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: var(--primary);
+      position: relative;
 
       p {
         font-size: 14px;
         color: var(--white);
-
         padding: 0;
         margin: 0;
         display: flex;
@@ -47,6 +47,17 @@
           font-family: Arial, Helvetica, sans-serif;
           color: var(--white);
         }
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: invert(1); /* Aplica o filtro branco */
       }
     }
 
@@ -61,18 +72,12 @@
       max-height: 500px; /* Ajuste este valor conforme necessário */
     }
 
-    &[open] summary {
-      &::after {
-        content: url("../../../../../assets/icons/chevron-up.svg");
-      }
-      margin-top: 5px;
+    &[open] summary::after {
+      background-image: url("../../../../../assets/icons/chevron-up.svg");
     }
 
-    &:not([open]) summary {
-      &::after {
-        content: url("../../../../../assets/icons/chevron-down.svg");
-      }
-      margin-top: 5px;
+    &:not([open]) summary::after {
+      background-image: url("../../../../../assets/icons/chevron-down.svg");
     }
   }
 }
