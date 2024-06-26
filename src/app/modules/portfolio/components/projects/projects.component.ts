@@ -24,7 +24,7 @@ export class ProjectsComponent {
       links: [
         {
           name: 'Conheça a aplicação',
-          href: 'onlineversa.vercel.app',
+          href: 'https://onlineversa.vercel.app',
         },
       ],
     },
