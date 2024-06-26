@@ -4,11 +4,13 @@
   <details>
     <summary>
       <p>
-        <strong> {{ item.summary.strong }} </strong>
+        <strong>{{ item.summary.strong }}</strong>
         {{ item.summary.p }}
       </p>
     </summary>
-    <article [innerHTML]="item.text"></article>
+    <div class="content">
+      <article [innerHTML]="item.text"></article>
+    </div>
   </details>
   }
 </div>
